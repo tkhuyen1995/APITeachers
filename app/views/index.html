@@ -177,13 +177,15 @@
             <div class="modal-body">
               <!-- sử dụng input hidden để có thể lấy id từ API -->
               <input hidden id="maGV" />
-              <div class="form-group">
+              <div class="form-group" id="divTaiKhoan">
                 <label>Tài khoản</label>
                 <input
                   id="TaiKhoan"
                   class="form-control"
                   placeholder="Nhập vào tài khoản"
+                  oninput="validateTaiKhoan()"
                 />
+                <span class="text-danger" id="spanTaiKhoan"></span>
               </div>
               <div class="form-group">
                 <label>Họ tên</label>
@@ -191,7 +193,9 @@
                   id="HoTen"
                   class="form-control"
                   placeholder="Nhập vào họ tên"
+                  oninput="validateHoTen()"
                 />
+                <span class="text-danger" id="spanHoTen"></span>
               </div>
               <div class="form-group">
                 <label>Mật khẩu</label>
@@ -200,7 +204,9 @@
                   class="form-control"
                   placeholder="Nhập vào mật khẩu"
                   type="password"
+                  oninput="validateMatKhau()"
                 />
+                <span class="text-danger" id="spanMatKhau"></span>
               </div>
               <div class="form-group">
                 <label>Email</label>
@@ -208,7 +214,9 @@
                   id="Email"
                   class="form-control"
                   placeholder="Nhập vào Email"
+                  oninput="validateEmail()"
                 />
+                <span class="text-danger" id="spanEmail"></span>
               </div>
               <div class="form-group">
                 <label>Hình Ảnh</label>
@@ -216,19 +224,30 @@
                   id="HinhAnh"
                   class="form-control"
                   placeholder="Nhập vào hình ảnh"
+                  oninput="validateHinhAnh()"
                 />
+                <span class="text-danger" id="spanHinhAnh"></span>
               </div>
               <div class="form-group">
                 <label for="">Loại Người Dùng: </label>
-                <select class="form-control" id="loaiNguoiDung">
+                <select
+                  class="form-control"
+                  id="loaiNguoiDung"
+                  oninput="validateLoaiND()"
+                >
                   <option value="">Chọn loại người dùng</option>
                   <option value="GV">Giáo viên</option>
                   <option value="HV">Học viên</option>
                 </select>
+                <span class="text-danger" id="spanLoaiND"></span>
               </div>
               <div class="form-group">
                 <label for="">Loại Ngôn Ngữ: </label>
-                <select class="form-control" id="loaiNgonNgu">
+                <select
+                  class="form-control"
+                  id="loaiNgonNgu"
+                  oninput="validateLoaiNN()"
+                >
                   <option value="">Chọn ngôn ngữ</option>
                   <option value="ITALIAN">ITALIAN</option>
                   <option value="FRENCH">FRENCH</option>
@@ -238,6 +257,7 @@
                   <option value="SWEDEN">SWEDEN</option>
                   <option value="SPANISH">SPANISH</option>
                 </select>
+                <span class="text-danger" id="spanLoaiNN"></span>
               </div>
               <div class="form-group">
                 <label>Mô tả</label>
@@ -246,7 +266,9 @@
                   id="MoTa"
                   class="form-control"
                   placeholder="Nhập vào mô tả"
+                  oninput="validateMoTa()"
                 ></textarea>
+                <span class="text-danger" id="spanMoTa"></span>
               </div>
             </div>
             <!-- Modal footer -->
